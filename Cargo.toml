@@ -1,0 +1,19 @@
+[package]
+name = "msp432p4111-pac"
+version = "0.1.0"
+edition = "2021"
+description = "MSP432P4111 Peripheral Access API"
+keywords = ["pac", "cortex-m4"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cortex-m = "0.7.6"
+coretx-m-rt = "0.7.1"
+bare-metal = "1.0.0"
+vcell = "0.1.x"
+
+[lib]
+name = "msp432p4111"
+path = "src/lib.rs"
+
