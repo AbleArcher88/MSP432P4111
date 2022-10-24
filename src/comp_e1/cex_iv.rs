@@ -1,1 +1,92 @@
-# [doc = "Register `CExIV` reader"] pub struct R (crate :: R < CEX_IV_SPEC >) ; impl core :: ops :: Deref for R { type Target = crate :: R < CEX_IV_SPEC > ; # [inline (always)] fn deref (& self) -> & Self :: Target { & self . 0 } } impl From < crate :: R < CEX_IV_SPEC > > for R { # [inline (always)] fn from (reader : crate :: R < CEX_IV_SPEC >) -> Self { R (reader) } } # [doc = "Field `CEIV` reader - Comparator interrupt vector word register"] pub type CEIV_R = crate :: FieldReader < u16 , CEIV_ENUM_READ_A > ; # [doc = "Comparator interrupt vector word register\n\nValue on reset: 0"] # [derive (Clone , Copy , Debug , PartialEq , Eq)] # [repr (u16)] pub enum CEIV_ENUM_READ_A { # [doc = "0: No interrupt pending"] CEIV_0 = 0 , # [doc = "2: Interrupt Source: CEOUT interrupt; Interrupt Flag: CEIFG; Interrupt Priority: Highest"] CEIV_2 = 2 , # [doc = "4: Interrupt Source: CEOUT interrupt inverted polarity; Interrupt Flag: CEIIFG"] CEIV_4 = 4 , # [doc = "10: Interrupt Source: Comparator ready interrupt; Interrupt Flag: CERDYIFG; Interrupt Priority: Lowest"] CEIV_10 = 10 , } impl From < CEIV_ENUM_READ_A > for u16 { # [inline (always)] fn from (variant : CEIV_ENUM_READ_A) -> Self { variant as _ } } impl CEIV_R { # [doc = "Get enumerated values variant"] # [inline (always)] pub fn variant (& self) -> Option < CEIV_ENUM_READ_A > { match self . bits { 0 => Some (CEIV_ENUM_READ_A :: CEIV_0) , 2 => Some (CEIV_ENUM_READ_A :: CEIV_2) , 4 => Some (CEIV_ENUM_READ_A :: CEIV_4) , 10 => Some (CEIV_ENUM_READ_A :: CEIV_10) , _ => None , } } # [doc = "Checks if the value of the field is `CEIV_0`"] # [inline (always)] pub fn is_ceiv_0 (& self) -> bool { * self == CEIV_ENUM_READ_A :: CEIV_0 } # [doc = "Checks if the value of the field is `CEIV_2`"] # [inline (always)] pub fn is_ceiv_2 (& self) -> bool { * self == CEIV_ENUM_READ_A :: CEIV_2 } # [doc = "Checks if the value of the field is `CEIV_4`"] # [inline (always)] pub fn is_ceiv_4 (& self) -> bool { * self == CEIV_ENUM_READ_A :: CEIV_4 } # [doc = "Checks if the value of the field is `CEIV_10`"] # [inline (always)] pub fn is_ceiv_10 (& self) -> bool { * self == CEIV_ENUM_READ_A :: CEIV_10 } } impl R { # [doc = "Bits 0:15 - Comparator interrupt vector word register"] # [inline (always)] pub fn ceiv (& self) -> CEIV_R { CEIV_R :: new (self . bits) } } # [doc = "Comparator Interrupt Vector Word Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cex_iv](index.html) module"] pub struct CEX_IV_SPEC ; impl crate :: RegisterSpec for CEX_IV_SPEC { type Ux = u16 ; } # [doc = "`read()` method returns [cex_iv::R](R) reader structure"] impl crate :: Readable for CEX_IV_SPEC { type Reader = R ; } # [doc = "`reset()` method sets CExIV to value 0"] impl crate :: Resettable for CEX_IV_SPEC { # [inline (always)] fn reset_value () -> Self :: Ux { 0 } }
+#[doc = "Register `CExIV` reader"]
+pub struct R(crate::R<CEX_IV_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CEX_IV_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CEX_IV_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CEX_IV_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CEIV` reader - Comparator interrupt vector word register"]
+pub type CEIV_R = crate::FieldReader<u16, CEIV_ENUM_READ_A>;
+#[doc = "Comparator interrupt vector word register\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u16)]
+pub enum CEIV_ENUM_READ_A {
+    #[doc = "0: No interrupt pending"]
+    CEIV_0 = 0,
+    #[doc = "2: Interrupt Source: CEOUT interrupt; Interrupt Flag: CEIFG; Interrupt Priority: Highest"]
+    CEIV_2 = 2,
+    #[doc = "4: Interrupt Source: CEOUT interrupt inverted polarity; Interrupt Flag: CEIIFG"]
+    CEIV_4 = 4,
+    #[doc = "10: Interrupt Source: Comparator ready interrupt; Interrupt Flag: CERDYIFG; Interrupt Priority: Lowest"]
+    CEIV_10 = 10,
+}
+impl From<CEIV_ENUM_READ_A> for u16 {
+    #[inline(always)]
+    fn from(variant: CEIV_ENUM_READ_A) -> Self {
+        variant as _
+    }
+}
+impl CEIV_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<CEIV_ENUM_READ_A> {
+        match self.bits {
+            0 => Some(CEIV_ENUM_READ_A::CEIV_0),
+            2 => Some(CEIV_ENUM_READ_A::CEIV_2),
+            4 => Some(CEIV_ENUM_READ_A::CEIV_4),
+            10 => Some(CEIV_ENUM_READ_A::CEIV_10),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CEIV_0`"]
+    #[inline(always)]
+    pub fn is_ceiv_0(&self) -> bool {
+        *self == CEIV_ENUM_READ_A::CEIV_0
+    }
+    #[doc = "Checks if the value of the field is `CEIV_2`"]
+    #[inline(always)]
+    pub fn is_ceiv_2(&self) -> bool {
+        *self == CEIV_ENUM_READ_A::CEIV_2
+    }
+    #[doc = "Checks if the value of the field is `CEIV_4`"]
+    #[inline(always)]
+    pub fn is_ceiv_4(&self) -> bool {
+        *self == CEIV_ENUM_READ_A::CEIV_4
+    }
+    #[doc = "Checks if the value of the field is `CEIV_10`"]
+    #[inline(always)]
+    pub fn is_ceiv_10(&self) -> bool {
+        *self == CEIV_ENUM_READ_A::CEIV_10
+    }
+}
+impl R {
+    #[doc = "Bits 0:15 - Comparator interrupt vector word register"]
+    #[inline(always)]
+    pub fn ceiv(&self) -> CEIV_R {
+        CEIV_R::new(self.bits)
+    }
+}
+#[doc = "Comparator Interrupt Vector Word Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cex_iv](index.html) module"]
+pub struct CEX_IV_SPEC;
+impl crate::RegisterSpec for CEX_IV_SPEC {
+    type Ux = u16;
+}
+#[doc = "`read()` method returns [cex_iv::R](R) reader structure"]
+impl crate::Readable for CEX_IV_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets CExIV to value 0"]
+impl crate::Resettable for CEX_IV_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}
