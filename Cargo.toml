@@ -8,12 +8,20 @@ keywords = ["pac", "cortex-m4"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-cortex-m = "0.7.6"
+cortex-m = { version = "0.7.6", features = ["critical-section-single-core"] }
 cortex-m-rt = "0.7.1"
 bare-metal = "1.0.0"
 vcell = "0.1.x"
+panic-halt = "0.2.0"
+critical-section = { version = "1.1.1", optional = true }
+
+[features]
+default = ["critical-section"]
 
 [lib]
 name = "msp432p4111"
 path = "src/lib.rs"
 
+[[example]]
+name = "led_blinker"
+required-features = ["critical-section"]
